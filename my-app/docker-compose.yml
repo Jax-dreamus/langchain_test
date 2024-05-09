@@ -1,0 +1,15 @@
+version: '3'
+volumes:
+  translate_results_volume:
+services:
+  langchain:
+    build:
+      context: .
+    container_name: fastapi-lyrics-translation
+    image: registry.infra.music-flo.io/reco/playlist_attribute_extractor
+    command: ["uvicorn", "app.server:app", "--host", "0.0.0.0", "--port", "7688"]
+    ports:
+      - '7688:7688'
+    network_mode: "host"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
