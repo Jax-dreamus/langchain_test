@@ -5,7 +5,7 @@ services:
   langchain:
     build:
       context: .
-    container_name: fastapi-lyrics-translation
+    container_name: playlist_attribute_extractor
     image: registry.infra.music-flo.io/reco/playlist_attribute_extractor
     command: ["uvicorn", "app.server:app", "--host", "0.0.0.0", "--port", "7688"]
     ports:
