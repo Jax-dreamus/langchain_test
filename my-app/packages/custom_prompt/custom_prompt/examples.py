@@ -2,9 +2,9 @@ from langchain_core.pydantic_v1 import BaseModel, Field
 
 
 class PlaylistAttributes(BaseModel):
-    genre: list = Field(description="genre of the playlist")
-    tempo: str = Field(description="tempo of the playlist")
-    instruments: list = Field(description="instruments used in the playlist")
+    genre: list = Field(description="플레이리스트 장르")
+    tempo: str = Field(description="플레이리스트 템포")
+    instruments: list = Field(description="플레이리스트에서 사용되는 기구")
     mood: list = Field(description="mood of the playlist")
     release_decade: list = Field(description="release year of the playlist")
     etc_keywords: list = Field(description="other keywords of the playlist")
